@@ -1,9 +1,11 @@
+import os
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QPushButton, QLabel
 from PyQt5.QtCore import QTimer, Qt
 from PyQt5.QtGui import QPalette, QColor, QIcon
 
 
+BASE_DIR = os.path.dirname(__file__)
 MY_GREEN = '#11FF55'
 
 
@@ -147,7 +149,7 @@ class CountdownApp(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon('tasktimer.ico'))
+    app.setWindowIcon(QIcon(os.path.join(BASE_DIR, 'tasktimer.ico')))
     ex = CountdownApp()
     ex.show()
     sys.exit(app.exec_())
